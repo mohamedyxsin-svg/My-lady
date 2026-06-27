@@ -1,0 +1,1298 @@
+/* --------------------- */
+/* FONTS */
+/* --------------------- */
+
+@font-face {
+    font-family: "Marykate";
+    src: url("fonts/Marykate.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Perandory";
+    src: url("fonts/Perandory.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face{
+    font-family:"Brittany";
+    src:url("fonts/BrittanySignature.ttf") format("truetype");
+}
+
+
+/* --------------------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow:hidden;
+    font-family:"Marykate", sans-serif;
+}
+
+/* --------------------- */
+
+#countdown-page{
+    width:100%;
+    height:100vh;
+    background:url("images/background1.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:opacity 1s ease;
+}
+
+/* --------------------- */
+
+.content{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.intro,
+.countdown,
+#surpriseBtn{
+
+    width:100%;
+    text-align:center;
+
+}
+
+/* --------------------- */
+
+.intro{
+
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    color:#f2dbb9;
+
+    text-align:center;
+
+    line-height:1.9;
+
+    font-size:1.45rem;
+
+    font-family:"Marykate", sans-serif;
+
+}
+
+.line{
+
+    width:100%;
+
+    text-align:center;
+
+    margin:8px 0;
+
+}
+
+.letter{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(35px);
+
+    animation:letterRise .6s ease forwards;
+
+    font-family:inherit;
+}
+
+.space{
+    display:inline-block;
+    width:.35em;
+    font-family:inherit;
+}
+
+/* --------------------- */
+
+.countdown{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+
+    animation:countdownFade 1.5s ease forwards;
+    animation-delay:5.3s;
+}
+
+/* --------------------- */
+
+.time-box{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+/* --------------------- */
+
+.digit{
+
+    width:95px;
+
+    text-align:center;
+
+    font-family:"Perandory", serif;
+
+    font-size:4rem;
+
+    color:#f2dbb9;
+
+    line-height:1;
+
+}
+
+/* --------------------- */
+
+.time-box span{
+    font-family:"Perandory", serif;
+    margin-top:10px;
+    color:#f2dbb9;
+    font-size:0.72rem;
+    font-weight:normal;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* --------------------- */
+
+.colon{
+    font-family:"Perandory", serif;
+    color:#f2dbb9;
+    font-size:4rem;
+    margin:0 3px;
+    line-height:1;
+}
+
+/* --------------------- */
+
+@media (max-width:480px){
+
+    .intro{
+        font-size:1.32rem;
+    }
+
+    .digit{
+        font-size:3.9rem;
+    }
+
+    .colon{
+        font-size:3.9rem;
+    }
+
+    .time-box{
+        width:65px;
+    }
+
+}
+
+/* --------------------- */
+/* INTRO ASCEND */
+/* --------------------- */
+
+@keyframes introAscend{
+
+    0%{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes letterRise{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes countdownFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* --------------------- */
+/* COUNTDOWN ROLL EFFECT */
+/* --------------------- */
+
+
+
+.digit.animate{
+
+    animation: digitRoll .45s ease;
+
+}
+
+@keyframes digitRoll{
+
+    0%{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* --------------------- */
+/* Surprise Button */
+/* --------------------- */
+
+#surpriseBtn{
+
+    margin-top:40px;
+
+    padding:14px 30px;
+
+    background:#f2dbb9;
+
+    color:#394d31;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-family:"Marykate";
+
+    font-size:1.2rem;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:translateY(20px);
+
+    transition:all .8s ease;
+
+}
+
+#surpriseBtn.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+    transform:translateY(0);
+
+}
+
+.hidden{
+    display:none;
+}
+
+
+/* --------------------- */
+
+#birthday-page{
+
+    width:100%;
+    height:100vh;
+
+    background-image:url("images/background2.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    position:relative;
+
+    transform:scale(1.15);
+
+    
+     opacity:0;
+
+    transition:opacity 1s ease;
+
+
+}
+
+/* --------------------- */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:5;
+
+}
+
+/* --------------------- */
+
+.title{
+
+    position:absolute;
+
+    top:180px;
+    left:70px;
+
+    transform:translateX(-50%);
+
+    width:330px;
+    height:220px;
+
+    opacity:0;
+}
+
+/* --------------------- */
+
+.happy{
+
+    position:absolute;
+
+    top:125px;
+    left:0;
+
+    font-family:"Perandory";
+    font-size:3rem;
+
+    color:#394d31;
+
+    line-height:.9;
+
+}
+/* --------------------- */
+
+.birthday{
+
+    position:absolute;
+
+    top:150px;
+    left:0;
+
+    font-family:"Perandory";
+
+    font-size:5rem;
+
+    color:#394d31;
+
+    line-height:.9;
+
+}
+/* --------------------- */
+
+.baby-box{
+
+    position:absolute;
+
+    top:185px;
+
+    right:90px;
+
+}
+.baby{
+
+    font-family:"Brittany";
+
+    font-size:2.3rem;
+
+    color:#394d31;
+
+    font-weight:normal;
+
+    background:rgba(247,209,12,.18);
+
+    padding:2px 8px;
+
+    display:inline-block;
+
+    transform:rotate(-17deg);
+
+    transform-origin:center;
+
+    animation:babyGlow 4s ease-in-out infinite;
+
+}
+/* --------------------- */
+
+#heartButton{
+
+    position:absolute;
+
+    bottom:70px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:5;
+
+    background:#f7cf16;
+
+    color:#394d31;
+
+    border:none;
+
+    padding:12px 24px;
+
+    font-family:"Marykate";
+
+    font-size:1rem;
+
+    border-radius:8px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+    opacity:0;
+
+}
+
+#heartButton:hover{
+
+    transform:translateX(-50%) scale(1.05);
+
+    background:#efc400;
+
+}
+
+#heartButton:active{
+
+    transform:translateX(-50%) scale(.96);
+
+}
+
+/* --------------------- */
+
+.couple{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%) translateY(40px);
+
+    width:92%;
+
+    z-index:2;
+
+    opacity:0;
+
+}
+
+/* --------------------- */
+
+@media(max-width:480px){
+
+   .happy{
+
+    font-size:2rem;
+
+}
+
+.birthday{
+
+    font-size:3.2rem;  
+
+}
+
+    .baby span{
+
+        font-size:3.2rem;
+
+    }
+
+    .couple{
+
+        width:100%;
+
+    }
+
+}
+
+@keyframes bgZoomOut{
+
+    from{
+
+        transform:scale(1.15);
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes titleReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.75);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes coupleReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-50%) translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(-50%) translateY(0);
+
+    }
+
+}
+
+@keyframes buttonReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-50%) translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(-50%) translateY(0);
+
+    }
+
+}
+
+/* --------------------- */
+/* FLOATING EMOJIS */
+/* --------------------- */
+
+.floating-emojis{
+
+    position:absolute;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+.floating-emojis span{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    font-size:2rem;
+
+}
+
+.floating-emojis span:nth-child(1){
+    left:5%;
+    animation:floatUp 9s linear infinite;
+    animation-delay:0s;
+}
+
+.floating-emojis span:nth-child(2){
+    left:15%;
+    animation:floatUp 12s linear infinite;
+    animation-delay:1s;
+}
+
+.floating-emojis span:nth-child(3){
+    left:25%;
+    animation:floatUp 10s linear infinite;
+    animation-delay:3s;
+}
+
+.floating-emojis span:nth-child(4){
+    left:35%;
+    animation:floatUp 11s linear infinite;
+    animation-delay:2s;
+}
+
+.floating-emojis span:nth-child(5){
+    left:45%;
+    animation:floatUp 13s linear infinite;
+    animation-delay:5s;
+}
+
+.floating-emojis span:nth-child(6){
+    left:55%;
+    animation:floatUp 10s linear infinite;
+    animation-delay:4s;
+}
+
+.floating-emojis span:nth-child(7){
+    left:65%;
+    animation:floatUp 14s linear infinite;
+    animation-delay:2s;
+}
+
+.floating-emojis span:nth-child(8){
+    left:75%;
+    animation:floatUp 11s linear infinite;
+    animation-delay:6s;
+}
+
+.floating-emojis span:nth-child(9){
+    left:85%;
+    animation:floatUp 12s linear infinite;
+    animation-delay:1s;
+}
+
+.floating-emojis span:nth-child(10){
+    left:12%;
+    animation:floatUp 15s linear infinite;
+    animation-delay:7s;
+}
+
+.floating-emojis span:nth-child(11){
+    left:32%;
+    animation:floatUp 13s linear infinite;
+    animation-delay:3s;
+}
+
+.floating-emojis span:nth-child(12){
+    left:58%;
+    animation:floatUp 10s linear infinite;
+    animation-delay:5s;
+}
+
+.floating-emojis span:nth-child(13){
+    left:90%;
+    animation:floatUp 16s linear infinite;
+    animation-delay:8s;
+}
+
+@keyframes floatUp{
+
+    0%{
+
+        transform:translateY(0) translateX(0) rotate(0deg) scale(.8);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:0;
+
+    }
+
+    50%{
+
+        transform:translateY(-50vh) translateX(20px) rotate(180deg);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) translateX(-20px) rotate(360deg) scale(1.1);
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes coupleFloat{
+
+    0%{
+        transform:translateX(-50%) scale(1);
+    }
+
+    50%{
+        transform:translateX(-50%) scale(1.050);
+    }
+
+    100%{
+        transform:translateX(-50%) scale(1);
+    }
+
+}
+
+@keyframes babyGlow{
+
+    0%{
+
+        background:rgba(247,209,12,.15);
+
+    }
+
+    50%{
+
+        background:rgba(247,209,12,.70);
+
+    }
+
+    100%{
+
+        background:rgba(247,209,12,.15);
+
+    }
+
+}
+
+.pageExit{
+
+    animation:pageFade .7s ease forwards;
+
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:translateX(-60px);
+
+    }
+
+}
+
+.show-page{
+
+    animation:bgZoomOut 8s ease forwards;
+
+}
+
+.show-page .title{
+
+    animation:titleReveal 5s ease forwards;
+
+}
+
+.show-page .couple{
+
+    animation:
+        coupleReveal 2.2s ease forwards,
+        coupleFloat 7s ease-in-out infinite;
+
+    animation-delay:
+        0s,
+        2.2s;
+
+}
+
+.show-page #heartButton{
+
+    animation:buttonReveal 1s ease forwards;
+
+    animation-delay:1.8s;
+
+}
+
+#letter-page{
+
+    width:100%;
+    height:100vh;
+
+    background:url("images/background3.jpg");
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transition:opacity 2s ease;
+
+}
+
+.letter-container{
+
+    width:90%;
+    height:100vh;
+
+    margin:auto;
+
+    padding:60px 0;
+
+    padding-left:8%;
+    padding-right:8%;
+
+    overflow-y:auto;
+
+}
+#letterTitle{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    font-family:"Marykate";
+
+    font-size:2.8rem;
+
+    color:#f2dbb9;
+
+    margin-bottom:45px;
+
+    text-align:center;
+
+}
+#letterContent{
+
+    opacity:0;
+
+    margin-top:35px;
+
+}
+
+#letterContent p{
+
+    margin-bottom:32px;
+
+    line-height:2.1;
+
+    font-size:1.2rem;
+
+    color:#f2dbb9;
+
+}
+
+@keyframes titleAppear{
+
+    from{
+
+        opacity:0;
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes letterAppear{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+.letter-container::-webkit-scrollbar{
+
+    width:0;
+
+}
+
+#nextSectionBtn{
+
+    display:block;
+
+    margin:60px auto 80px auto;
+
+    padding:14px 32px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#f2dbb9;
+
+    color:#394d31;
+
+    font-family:"Marykate";
+
+    font-size:1.2rem;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    pointer-events:none;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+#nextSectionBtn.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+
+}
+
+/* --------------------- */
+/* PAGE 4 */
+/* --------------------- */
+
+#kiss-question-page{
+
+    width:100%;
+    height:100vh;
+
+    background:url("images/background3.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+
+    opacity:0;
+
+    transition:opacity 1.5s ease;
+
+}
+
+.question-container{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+padding-top:25vh;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+#kissQuestion{
+
+    font-family:"Marykate";
+
+    font-size:3.2rem;
+
+    color:#f2dbb9;
+
+    line-height:1.5;
+
+    max-width:700px;
+
+    padding:0 20px;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+#yesBtn{
+
+    margin-top:60px;
+
+    padding:16px 55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#f2dbb9;
+
+    color:#394d31;
+
+    font-family:"Marykate";
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:.35s ease;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+#yesBtn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+@keyframes questionAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes yesAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* --------------------- */
+/* PAGE 5 */
+/* --------------------- */
+
+#kiss-page{
+
+    width:100%;
+    height:100vh;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    background:url("images/background1.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+    opacity:0;
+
+    transition:opacity 2s ease;
+
+    z-index:100;
+}
+
+.kiss-container{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#kissImage{
+
+    width:380px;
+
+    max-width:90%;
+
+    border-radius:20px;
+
+    opacity:0;
+
+    transform:scale(.9);
+
+}
+
+#loveText{
+
+    position:absolute;
+
+    font-family:"Perandory";
+
+    font-size:5rem;
+
+    color:white;
+
+    text-align:center;
+
+    opacity:0;
+
+    transform:scale(.8);
+
+}
+
+@keyframes kissAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes kissDisappear{
+
+    from{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+}
+
+@keyframes loveReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
