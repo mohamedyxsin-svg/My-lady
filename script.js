@@ -340,8 +340,19 @@ function showKiss(index) {
 
     const audio = kissAudios[index];
 
-    audio.currentTime = 0;
-    audio.play();
+audio.currentTime = 0;
+
+audio.play()
+    .then(() => {
+
+        console.log("✅ Audio started successfully:", index);
+
+    })
+    .catch((error) => {
+
+        console.error("❌ Audio could not play:", error);
+
+    });
 
     // Start fading BEFORE the audio finishes
     const fadeStart = Math.max(0, (audio.duration - 1.2) * 1000);
