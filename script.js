@@ -290,15 +290,15 @@ const loveVoice = document.getElementById("loveVoice");
 
 const kissImages = [
 
-    "images/kiss1.JPG",
+    "images/kiss1.jpg",
 
-    "images/kiss2.JPG",
+    "images/kiss2.jpg",
 
-    "images/kiss3.JPG",
+    "images/kiss3.jpg",
 
-    "images/kiss4.JPG",
+    "images/kiss4.jpg",
 
-    "images/kiss5.JPG"
+    "images/kiss5.jpg"
 
 ];
 
